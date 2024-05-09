@@ -558,11 +558,7 @@ iframe{
   z-index: 4;
 }
 
-.header-bottom.active {
-  position: fixed;
-  top: -85px;
-  animation: slideIn 0.5s var(--cubic-out) forwards;
-}
+
 
 @keyframes slideIn {
   0% { transform: translateY(0); }

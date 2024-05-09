@@ -453,19 +453,40 @@ iframe{
 
 .has-scrollbar {
   display: flex;
-  gap: 30px;
-  overflow-x: auto;
-  padding-block-end: 30px;
-  scroll-snap-type: inline mandatory;
+  flex-wrap: wrap;
+  justify-content: center; /* Center items horizontally */
 }
 
-.has-scrollbar::-webkit-scrollbar { height: 10px; }
+.scrollbar-item {
+  width: calc(25% - 20px); /* Adjusted width for four cards per row */
+  margin: 0 10px 20px; /* Add margin to all sides except top */
+  box-sizing: border-box;
+}
 
-.has-scrollbar::-webkit-scrollbar-track { outline: 3px solid var(--marigold); }
+@media (max-width: 1199px) {
+  .scrollbar-item {
+    width: calc(25% - 20px); /* Adjusted width for four cards per row */
+  }
+}
 
-.has-scrollbar::-webkit-scrollbar-thumb { background-color: var(--marigold); }
+@media (max-width: 992px) {
+  .scrollbar-item {
+    width: calc(33.33% - 20px); /* Adjusted width for three cards per row */
+  }
+}
 
-.has-scrollbar::-webkit-scrollbar-button { width: calc(25% - 40px); }
+@media (max-width: 768px) {
+  .scrollbar-item {
+    width: calc(50% - 20px); /* Adjusted width for two cards per row */
+  }
+}
+
+@media (max-width: 576px) {
+  .scrollbar-item {
+    width: calc(100% - 20px); /* Adjusted width for one card per row */
+  }
+}
+
 
 .section-subtitle,
 .section-title {
@@ -918,7 +939,6 @@ iframe{
   margin-block-end: 90px;
 }
 
-.featured-game .has-scrollbar { gap: 0; }
 
 .featured-game-card { position: relative; }
 

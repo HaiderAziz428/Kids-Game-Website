@@ -70,10 +70,27 @@ function toggleFullscreen() {
   }
 }
 
-function generateRandomNumber() {
-  var randomNumber = Math.floor(Math.random() * 9000000000) + 1000000000;
-  return randomNumber.toLocaleString(); 
-}
-window.onload = function() {
-  document.getElementById('randomNumber').textContent = generateRandomNumber();
-};
+let gamePlays = parseInt(localStorage.getItem('gamePlays')) || 0;
+
+    // Get all "Play Now" link elements
+    const playNowLinks = document.querySelectorAll('.card-title');
+
+    // Get the paragraph element where the game play count will be displayed
+    const gamePlayedParagraph = document.getElementById('GamePlayed');
+
+    // Display the initial game play count
+    gamePlayedParagraph.textContent = gamePlays;
+
+    // Add click event listeners to all "Play Now" links
+    playNowLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            // Increment game play count
+            gamePlays++;
+
+            // Update the displayed count
+            gamePlayedParagraph.textContent = gamePlays;
+
+            // Store the updated game play count in local storage
+            localStorage.setItem('gamePlays', gamePlays);
+        });
+    });

@@ -978,7 +978,7 @@ iframe{
 .featured-game-card .card-content .card-meta { color: var(--platinum); }
 
 .featured-game-card .card-content ion-icon {
-  color: var(--marigold);
+  color: #43b823;
   font-size: 14px;
 }
 

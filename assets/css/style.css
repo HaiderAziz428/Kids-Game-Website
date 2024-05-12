@@ -275,6 +275,7 @@ body {
   cursor: pointer;
   font-size: 16px;
 }
+
 #fullscreen-btn:hover {
   background-color: #45a049;
 }
@@ -911,7 +912,7 @@ iframe {
 
 .featured-game-card { position: relative; }
 
-.featured-game-card :is(.card-content, .card-content-overlay) { position: absolute; }
+.featured-game-card :is(.card-content,) { position: absolute; }
 
 .featured-game-card .card-content {
   bottom: 0;
@@ -921,16 +922,7 @@ iframe {
   transition: var(--transition);
 }
 
-.featured-game-card .card-content-overlay {
-  inset: 0;
-  background-color: var(--marigold_75);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  transition: var(--transition);
-}
+
 
 .featured-game-card .card-title { margin-block-end: 5px; }
 
@@ -950,20 +942,6 @@ iframe {
   color: #43b823;
   font-size: 14px;
 }
-
-.featured-game-card .card-icon { margin-block-end: 20px; }
-
-.featured-game-card .card-content-overlay .card-title { color: var(--xiketic); }
-
-.featured-game-card .card-content-overlay .span { color: var(--white); }
-
-.featured-game-card:is(:hover, :focus-within) .card-content { opacity: 0; }
-
-.featured-game-card:is(:hover, :focus-within) .card-content-overlay { opacity: 1; }
-
-
-
-
 
 /*-----------------------------------*\
   #SHOP

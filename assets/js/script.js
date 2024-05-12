@@ -94,3 +94,44 @@ let gamePlays = parseInt(localStorage.getItem('gamePlays')) || 0;
             localStorage.setItem('gamePlays', gamePlays);
         });
     });
+    function toggleFullscreen() {
+      var elem = document.getElementById("game-container");
+      if (
+        document.fullscreenElement ||
+        document.webkitFullscreenElement ||
+        document.mozFullScreenElement ||
+        document.msFullscreenElement
+      ) {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        } else if (document.webkitExitFullscreen) {
+          document.webkitExitFullscreen();
+        } else if (document.mozCancelFullScreen) {
+          document.mozCancelFullScreen();
+        } else if (document.msExitFullscreen) {
+          document.msExitFullscreen();
+        }
+      } else {
+        if (elem.requestFullscreen) {
+          elem.requestFullscreen();
+        } else if (elem.webkitRequestFullscreen) {
+          elem.webkitRequestFullscreen();
+        } else if (elem.mozRequestFullScreen) {
+          elem.mozRequestFullScreen();
+        } else if (elem.msRequestFullscreen) {
+          elem.msRequestFullscreen();
+        }
+      }
+    }
+  
+    function toggleSound() {
+      var soundImg = document.getElementById("sound-img");
+      var gameFrame = document.getElementById("game-frame");
+      if (gameFrame.muted) {
+        gameFrame.muted = false;
+        soundImg.src = "sound-on-icon.png";
+      } else {
+        gameFrame.muted = true;
+        soundImg.src = "sound-off-icon.png";
+      }
+    }

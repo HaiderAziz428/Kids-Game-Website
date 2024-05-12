@@ -263,17 +263,58 @@ body {
       text-align: center;
   }
 }
-iframe{
-  margin-top: 180px;
-  margin-left: 250px;
-  margin-bottom: 80px;
-  width:960px;
-  height:600px;
-  
-}
+
 #game-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100% - 250px); /* Adjust height to accommodate margin-top */
+  margin-top: 290px; /* Margin-top for PC devices */
+  margin-bottom: 60px;
+}
+
+.iframe-container {
+  position: relative;
+  width: 80%;
+ 
+  padding-top: 56.25%; /* Aspect ratio (height:width) for 16:9 video */
+  overflow: hidden;
+}
+
+iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
+  border: none;
+}
+
+@media screen and (max-width: 1024px) {
+  #game-container {
+    margin-top: 250px; /* Margin-top for smaller PC devices */
+  }
+  .iframe-container {
+    width: 90%; /* Adjust as needed for smaller screens */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #game-container {
+    margin-top: 220px; /* Margin-top for tablets and large mobile devices */
+  }
+  .iframe-container {
+    width: 95%; /* Adjust as needed for smaller screens */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #game-container {
+    margin-top: 220px; /* Margin-top for small mobile devices */
+  }
+  .iframe-container {
+    width: 100%; /* Full width on smaller screens */
+  }
 }
 
 .Fullscreen {
@@ -289,96 +330,9 @@ iframe{
 .Fullscreen:hover {
   background-color: #f0f0f0;
 }
-@media (max-width: 1454px) {
-  iframe {
-    width:725px;
-    height:450px;
-    }
-  }
-  @media (max-width: 1222px) {
-    iframe {
-      width:690px;
-      height:430px;
-      margin-left: 230px;
-      }
-    }
-    @media (max-width: 1150px) {
-      iframe {
-        width:560px;
-        height:350px;
-        margin-left: 190px;
-        }
-      }
-      @media (max-width: 920px) {
-        iframe {
-          width:513px;
-          height:320px;
-          }
-        }
-        @media (max-width: 920px) {
-          iframe {
-            width:513px;
-            height:320px;
-            }
-          }
-          @media (max-width: 861px) {
-            iframe {
-              margin-left: 140px;
-              width:513px;
-              height:320px;
-              }
-            }
-          @media (max-width: 765px) {
-            iframe {
-              margin-left: 110px;
-              width:500px;
-              height:320px;
-              }
-            }
-          @media (max-width: 695px) {
-            iframe {
-              margin-left: 110px;
-              width:450px;
-              height:280px;
-              }
-            }
-            @media (max-width: 640px) {
-              iframe {
-                margin-left: 95px;
-                width:420px;
-                height:260px;
-                }
-              }
-              @media (max-width: 566px) {
-                iframe {
-                  margin-left: 90px;
-                  width:390px;
-                  height:240px;
-                  }
-                }
-                @media (max-width: 566px) {
-                  iframe {
-                    margin-left: 80px;
-                    width:360px;
-                    height:220px;
-                    }
-                  }
-                  @media (max-width: 498px) {
-                    iframe {
-                      margin-left: 60px;
-                      width:300px;
-                      height:200px;
-                      }
-                    }
-                    @media (max-width: 399px) {
-                      iframe {
-                        margin-left: 40px;
-                        width:250px;
-                        height:170px;
-                        }
-                      }
+
 .logo{
-  height: 135px;
+  height: 140px;
   width: 170px;
   object-fit:cover;
   
@@ -1685,7 +1639,7 @@ iframe{
   .header-bottom::before {
     display: block;
     top: 0;
-    left: -15px;
+    left: -25px;
     right: auto;
     width: 270px;
     --skewX: 16deg;

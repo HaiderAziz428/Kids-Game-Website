@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-sF8l9M8vL/ZfHU7Zre9InAP3zJn9roHKv89IkJnmItgAQx/MDE3DeXzeRWlLkXyCpZ1z4H/A/g84viB8SMDZyA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oxanium:wght@600;700;800&family=Poppins:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <!-- 
+    - preload images
+  -->
+</head>
+<body >
+
+  <header class="header">
+    <div class="header-bottom skewBg" data-header>
+      
+      <div class="container">
+        <img class="logo" src="./assets/images/EFG_Games.jpg" alt="logo" >
+        <nav class="navbar" data-navbar>
+          <ul class="navbar-list">
+            <li class="navbar-item">
+              <a href="#arcade" class="navbar-link skewBg" data-nav-link>Play Now</a>
+            </li>
+
+            <li class="navbar-item">
+              <a href="#" class="navbar-link skewBg" data-nav-link>About</a>
+            </li>
+       
+            
+            <li class="navbar-item">
+              <a href="#" class="navbar-link skewBg" data-nav-link>Search  🔍</a>
+            </li>
+            <div class="header-actions">
+              <a href="#" class="bt" data-btn="" style="--top: 36px; --left: 106px;">Sign Up</a>
+          
+              </div>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <button class="nav-toggle-btn" aria-label="toggle menu" data-nav-toggler>
+            <ion-icon name="menu-outline" class="menu"></ion-icon>
+            <ion-icon name="close-outline" class="close"></ion-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- 
+    - #SEARCH BOX
+  -->
+  <div class="search-container" data-search-box>
+    <div class="input-wrapper">
+      <input type="search" name="search" aria-label="search" placeholder="Search here..." class="search-field">
+      <button class="search-submit" aria-label="submit search" data-search-toggler>
+        <ion-icon name="search-outline"></ion-icon>
+      </button>
+      <button class="search-close" aria-label="close search" data-search-toggler></button>
+    </div>
+  </div>
+  <main>
+    <article>
+
+    
+    <!--Game Link-->
+    <div id="game-container">
+      <div class="iframe-container">
+         <iframe id="game-frame" src="https://i.simmer.io/@haideraziz/zombie-math" frameborder="0" allowfullscreen></iframe>
+         <button id="fullscreen-btn" class="control-btn" onclick="toggleFullscreen()">
+          <i class="fas fa-expand-alt fa-2x"></i>
+        </button>
+        <button id="sound-btn" class="control-btn" onclick="toggleSound()">
+          <i class="fas fa-volume-up fa-2x" id="sound-img"></i>
+        </button>
+        </div>
+    </div>
+     <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+
+    <div class="footer-top">
+      <div class="container">
+
+        <div class="footer-brand">
+
+          <img class="logo" src="./assets/images/EFG_Games.jpg" alt="logo" >
+
+
+          <p class="footer-text">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been </p>
+        </div>
+        <ul class="footer-list">
+          <li>
+            <a href="#" class="footer-link">Terms & Conditions</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Privacy Policy</a>
+          </li>
+
+          
+        </ul>
+        <div class="footer-wrapper">
+
+          <div class="social-wrapper">
+
+            <p class="footer-list-title">Follow Us</p>
+
+            <ul class="social-list">
+
+              <li>
+                <a href="#" class="social-link" style="background-color: #3b5998">
+                  <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="social-link" style="background-color: #55acee">
+                  <ion-icon name="logo-twitter"></ion-icon>
+                </a>
+              </li>
+
+
+              <li>
+                <a href="#" class="social-link" style="background-color: #C13584">
+                  <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-newsletter">
+
+           
+            <form action="" class="footer-newsletter">
+              <input type="email" name="email_address" aria-label="email" placeholder="Enter your email" required
+                class="email-field">
+
+              <button type="submit" class="footer-btn" aria-label="submit">
+                <ion-icon name="rocket"></ion-icon>
+              </button>
+            </form>
+
+          </div>
+          
+
+        </div>
+
+        <!-- Play game this year-->
+
+        <div class="footer-box">
+
+      
+
+            <p class="footer-item">Game Plays This Year</p>
+            <p id="GamePlayed">0</p>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+
+        <p class="copyright">
+          &copy; 2024. All Right Reserved by <a href="#" class="copyright-link">EFG Games</a>
+        </p>
+
+        <img src="./assets/images/footer-bottom-img.png" width="340" height="21" loading="lazy" alt=""
+          class="footer-bottom-img">
+
+      </div>
+    </div>
+
+  </footer>
+    <script src="./assets/js/script.js" defer></script>
+
+    <!-- 
+      - ionicon link
+    -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

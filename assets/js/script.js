@@ -1,5 +1,8 @@
 'use strict';
 
+
+
+
 const navbar = document.querySelector("[data-navbar]");
 const navbarLinks = document.querySelectorAll("[data-nav-link]");
 const navbarToggler = document.querySelector("[data-nav-toggler]");
@@ -18,19 +21,36 @@ for (let i = 0; i < navbarLinks.length; i++) {
 
 
 
+
 /**
  * search toggle
  */
+// scripts.js
 
-const searchTogglers = document.querySelectorAll("[data-search-toggler]");
-const searchBox = document.querySelector("[data-search-box]");
+document.addEventListener('DOMContentLoaded', () => {
+  const aboutLink = document.getElementById('about-link');
+  const modal = document.getElementById('about-modal');
+  const closeBtn = document.querySelector('.close-btn');
+  const headerBottom = document.querySelector('.header-bottom');
 
-for (let i = 0; i < searchTogglers.length; i++) {
-  searchTogglers[i].addEventListener("click", function () {
-    searchBox.classList.toggle("active");
+  aboutLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    modal.style.display = 'block';
+    headerBottom.classList.add('blur');
   });
-}
 
+  closeBtn.addEventListener('click', () => {
+    modal.style.display = 'none';
+    headerBottom.classList.remove('blur');
+  });
+
+  window.addEventListener('click', (e) => {
+    if (e.target == modal) {
+      modal.style.display = 'none';
+      headerBottom.classList.remove('blur');
+    }
+  });
+});
 
 
 /**

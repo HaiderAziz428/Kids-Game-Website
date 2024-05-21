@@ -285,7 +285,7 @@ body {
   justify-content: center;
   align-items: center;
   height: calc(100% - 250px); /* Adjust height to accommodate margin-top */
-  margin-top: 290px; /* Margin-top for PC devices */
+  margin-top: 160px; /* Margin-top for PC devices */
   margin-bottom: 60px;
 }
 
@@ -348,8 +348,8 @@ iframe {
 }
 
 .logo{
-  height: 140px;
-  width: 170px;
+  height: 115px;
+  width: 128px;
   object-fit:cover;
   
 }

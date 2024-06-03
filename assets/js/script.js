@@ -155,3 +155,44 @@ let gamePlays = parseInt(localStorage.getItem('gamePlays')) || 0;
         soundImg.src = "sound-off-icon.png";
       }
     }
+    const isLoggedIn = false; // Replace this with your logic to check if user is logged in
+
+    window.onload = function() {
+      const gameList = document.getElementById('gameList');
+      const loginMessage = document.getElementById('loginMessage');
+    
+      if (!isLoggedIn) {
+        // If user is not logged in, blur the game list and display the login message
+        gameList.classList.add('blur');
+        loginMessage.style.display = 'flex';
+        toggleGameLinks(true);
+      } else {
+        // If user is logged in, remove blur, hide the login message
+        gameList.classList.remove('blur');
+        loginMessage.style.display = 'none';
+        toggleGameLinks(false);
+      }
+    };
+    
+    // Function to enable/disable game links
+    function toggleGameLinks(disable) {
+      const gameLinks = document.querySelectorAll('.featured-game-card a');
+      gameLinks.forEach(function(link) {
+        if (disable) {
+          link.addEventListener('click', preventDefault);
+          link.classList.add('disabled');
+        } else {
+          link.removeEventListener('click', preventDefault);
+          link.classList.remove('disabled');
+        }
+      });
+    }
+    
+    // Function to prevent default click action
+    function preventDefault(event) {
+      event.preventDefault();
+    }
+    
+    // Call toggleGameLinks to initially disable game links
+    toggleGameLinks(true);
+    

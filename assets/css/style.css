@@ -707,6 +707,7 @@ margin: 25px;}
     flex-direction: row;
     align-items: flex-start;
     text-align: left;
+    gap: 100px;
   }
 
   .about-section div {
@@ -975,6 +976,37 @@ margin: 25px;}
   color: #43b823;
   font-size: 14px;
 }
+.game-list-container {
+  position: relative; /* Make this container relative for absolute positioning within it */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; /* Ensure the items stack correctly */
+}
+
+.game-list {
+  width: 100%;
+  filter: blur(5px); /* Apply blur effect */
+}
+
+.login-message {
+  display: none; /* Hide the login message initially */
+  position: absolute; /* Position the message absolute within the container */
+  top: 50%; /* Position it at the center vertically */
+  left: 50%; /* Position it at the center horizontally */
+  transform: translate(-50%, -50%);
+background-image: var(--gradient-1);
+  padding: 20px;
+  border-radius: 10px;
+  z-index: 9999; /* Ensure the message is above other content */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 80%; /* Adjust the width as needed */
+  max-width: 300px; /* Set a max-width for the message box */
+}
+
 
 /*-----------------------------------*\
   #SHOP

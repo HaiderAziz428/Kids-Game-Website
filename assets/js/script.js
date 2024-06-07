@@ -3,6 +3,7 @@
 
 
 
+
 const navbar = document.querySelector("[data-navbar]");
 const navbarLinks = document.querySelectorAll("[data-nav-link]");
 const navbarToggler = document.querySelector("[data-nav-toggler]");
@@ -114,66 +115,20 @@ let gamePlays = parseInt(localStorage.getItem('gamePlays')) || 0;
             localStorage.setItem('gamePlays', gamePlays);
         });
     });
-    function toggleFullscreen() {
-      var elem = document.getElementById("game-container");
-      if (
-        document.fullscreenElement ||
-        document.webkitFullscreenElement ||
-        document.mozFullScreenElement ||
-        document.msFullscreenElement
-      ) {
-        if (document.exitFullscreen) {
-          document.exitFullscreen();
-        } else if (document.webkitExitFullscreen) {
-          document.webkitExitFullscreen();
-        } else if (document.mozCancelFullScreen) {
-          document.mozCancelFullScreen();
-        } else if (document.msExitFullscreen) {
-          document.msExitFullscreen();
-        }
-      } else {
-        if (elem.requestFullscreen) {
-          elem.requestFullscreen();
-        } else if (elem.webkitRequestFullscreen) {
-          elem.webkitRequestFullscreen();
-        } else if (elem.mozRequestFullScreen) {
-          elem.mozRequestFullScreen();
-        } else if (elem.msRequestFullscreen) {
-          elem.msRequestFullscreen();
-        }
-      }
-    }
-  
-    function toggleSound() {
-      var soundImg = document.getElementById("sound-img");
-      var gameFrame = document.getElementById("game-frame");
-      if (gameFrame.muted) {
-        gameFrame.muted = false;
-        soundImg.src = "sound-on-icon.png";
-      } else {
-        gameFrame.muted = true;
-        soundImg.src = "sound-off-icon.png";
-      }
-    }
-    const isLoggedIn = false; // Replace this with your logic to check if user is logged in
-
+    window.isLoggedIn = false;
     window.onload = function() {
-      const gameList = document.getElementById('gameList');
       const loginMessage = document.getElementById('loginMessage');
-    
+      const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true'; // Access the global variable
+  
       if (!isLoggedIn) {
-        // If user is not logged in, blur the game list and display the login message
-        gameList.classList.add('blur');
-        loginMessage.style.display = 'flex';
-        toggleGameLinks(true);
+          loginMessage.style.display = 'flex';
+          toggleGameLinks(true);
       } else {
-        // If user is logged in, remove blur, hide the login message
-        gameList.classList.remove('blur');
-        loginMessage.style.display = 'none';
-        toggleGameLinks(false);
+          loginMessage.style.display = 'none';
+          toggleGameLinks(false);
       }
-    };
-    
+  };
+  
     // Function to enable/disable game links
     function toggleGameLinks(disable) {
       const gameLinks = document.querySelectorAll('.featured-game-card a');
@@ -195,4 +150,7 @@ let gamePlays = parseInt(localStorage.getItem('gamePlays')) || 0;
     
     // Call toggleGameLinks to initially disable game links
     toggleGameLinks(true);
+    
+
+    
     

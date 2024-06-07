@@ -34,11 +34,12 @@
     <div class="header-bottom skewBg" data-header>
       
       <div class="container">
-        <img class="logo" src="./assets/images/EFG_Games.jpg" alt="logo" >
+        <a href="./index.html">
+        <img class="logo" src="./assets/images/EFG_Games.jpg" alt="logo" ></a>
         <nav class="navbar" data-navbar>
           <ul class="navbar-list">
             <li class="navbar-item">
-              <a href="#arcade" class="navbar-link skewBg" data-nav-link>Play Now</a>
+              <a href="./index.html" class="navbar-link skewBg" data-nav-link>Play Now</a>
             </li>
             <li class="navbar-item">
               <a href="#" class="navbar-link skewBg" data-nav-link>Search  🔍</a>
@@ -48,7 +49,7 @@
               <a href="#" class="navbar-link skewBg" data-nav-link id="about-link">About</a> 
             </li>
             <div class="header-actions">
-              <a href="#" class="bt" data-btn="" style="--top: 36px; --left: 106px;">Log In/Sign Up</a>
+              <a href="./login-SignUp/Main.html" class="bt" data-btn="" style="--top: 36px; --left: 106px;"id="login-button">SignUp/LogIn</a>
         
               </div>
           </ul>
@@ -65,13 +66,21 @@
   <!-- 
     - #SEARCH BOX
   -->
-  <div class="search-container" data-search-box>
-    <div class="input-wrapper">
-      <input type="search" name="search" aria-label="search" placeholder="Search here..." class="search-field">
-      <button class="search-submit" aria-label="submit search" data-search-toggler>
-        <ion-icon name="search-outline"></ion-icon>
-      </button>
-      <button class="search-close" aria-label="close search" data-search-toggler></button>
+  <div id="about-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <div class="about-section">
+        <div>
+        <h2>Introducing EFG Games!</h2>
+      
+        <p>Founded by Clifton Kpueh in 2024, this PC-based website offers a wide range of educational games for children of all ages. Clifton's inspiration for starting EFG Games stemmed from his passion for providing quality and accessible education to everyone. With games covering subjects like math, reading, science, and more, kids can have fun while learning valuable skills.</p>
+        <p>Clifton's journey towards creating EFG Games began in Monrovia, Liberia, where he was born. In 1999, he immigrated to the United States, and it was here that his dedication to education took root. The loss of his little sister, Neejay, in 2005, along with the hardships his family faced, fueled Clifton's determination to pursue education as a means to break the cycle of poverty.</p>
+        <p>Having graduated from Metropolitan State University in St. Paul, Minnesota, with a degree in Organizational Communications, Clifton is driven to use EFG Games as a platform to provide opportunities, resources, and motivation to children worldwide. His ultimate goal is to instill a love for learning in every child. Join us at EFG Games and let's embark on an exciting educational journey together!</p>
+      </div>
+      <div>
+        <img src="./assets/images/Clifton.png" alt="Clifton Kpueh">
+      </div>
+      </div>
     </div>
   </div>
   <main>
@@ -190,9 +199,8 @@
 
     <div class="footer-bottom">
       <div class="container">
-
         <p class="copyright">
-          &copy; 2024. All Right Reserved by <a href="#" class="copyright-link">EFG Games</a>
+          &copy; Copyright 2024 <a href="" class="copyright-link">EFG Games</a>, a division of Konduct Coach Learning . All Right Reserved
         </p>
 
       </div>

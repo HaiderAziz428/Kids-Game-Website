@@ -1,3 +1,4 @@
+'use strict';
 const sign_in_btn = document.querySelector("#sign-in-btn");
 const sign_up_btn = document.querySelector("#sign-up-btn");
 const container = document.querySelector(".container");
@@ -67,7 +68,10 @@ document.getElementById('sign-in-form').addEventListener('submit', function(even
     .then(data => {
         if (data === 'Login successful') {
             alert('Login successful!');
+            window.location.href = '../index.html';
+            localStorage.setItem('isLoggedIn', 'true');
             // Redirect to another page or handle post-login logic here
+    
         } else {
             alert('Login failed: ' + data);
         }
@@ -115,3 +119,8 @@ document.getElementById('reset-password-form').addEventListener('submit', functi
         alert('Error: ' + error.message);
     });
 });
+
+
+
+
+
